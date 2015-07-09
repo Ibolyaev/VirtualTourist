@@ -13,18 +13,33 @@ extension FlickrClient {
     struct Constants {
         
         // MARK: API Key
-        static let ApiKey : String = "QuWThTdiRmTux3YaDseUSEpUKo7aBYM737yKd4gY"
-        static let ApplicationID : String = "QrX47CA9cyuGewLdsL7o5Eb8iug6Em8ye0dnAbIr"
+        static let ApiKey : String = "2be09ae2040505be5b989346137ea3e9"
+        
         // MARK: URLs
-        static let BaseURLSecure : String = "https://api.parse.com/1/classes/"
+        static let BaseURLSecure : String = "https://api.flickr.com/services/rest/"
+        static let DataFormat : String = "json"
+        static let NoJsonCallBack : String = "1"
+        //api_key
         
         
     }
+    
+    
+    
+    struct Keys {
+        static let ApiKey = "api_key"
+        static let DataFormat = "format"
+        static let NoJsonCallBack = "nojsoncallback"
+        static let Method = "method"
+    }
+    
     // MARK: - Methods
     struct Methods {
         
         // MARK: Account
-        static let StudentLocation = "StudentLocation"
+        static let search = "flickr.photos.search"
+        
+        
         
         
     }
@@ -32,16 +47,13 @@ extension FlickrClient {
     struct JSONKeys {
         
         // Object
-        static let ObjectId = "objectId"
-        static let UniqueKey = "uniqueKey"
-        static let FirstName = "firstName"
-        static let LastName = "lastName"
-        static let MapString = "mapString"
-        static let MediaURL = "mediaURL"
-        static let Latitude = "latitude"
-        static let Longitude = "longitude"
-        static let CreatedAt = "createdAt"
-        static let UpdatedAt = "updatedAt"
+        static let Photos = "photos"
+        static let Photo = "photo"
+        static let Id = "id"
+        static let Server = "server"
+        static let Farm = "farm"
+        static let Secret = "secret"
+      
         
         static let Results = "results"
         

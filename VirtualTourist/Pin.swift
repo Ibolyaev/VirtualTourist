@@ -18,10 +18,12 @@ class Pin: NSManagedObject,MKAnnotation {
     
     @NSManaged var longitude: NSNumber
     @NSManaged var latitude: NSNumber
+    @NSManaged var loadedPage: NSNumber
+    @NSManaged var photos: [Photo]
     
     var coordinate: CLLocationCoordinate2D {
-        var coord = CLLocationCoordinate2D(latitude: self.latitude.doubleValue, longitude: self.longitude.doubleValue)
         
+        var coord = CLLocationCoordinate2D(latitude: self.latitude.doubleValue, longitude: self.longitude.doubleValue)
         return coord
     }
     // 5. Include this standard Core Data init method.
@@ -37,6 +39,7 @@ class Pin: NSManagedObject,MKAnnotation {
         
         self.longitude = longitude
         self.latitude  = latitude
+        self.loadedPage = 1
         
         
     }

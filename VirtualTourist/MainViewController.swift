@@ -32,8 +32,12 @@ class MainViewController: UIViewController,MKMapViewDelegate,NSFetchedResultsCon
         fetchedResultsController.delegate = self
         loadfetchedResults()
         
+        //test
+        //loadPhotosByPlaceFlickr()
+        
     }
-
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         
@@ -59,6 +63,21 @@ class MainViewController: UIViewController,MKMapViewDelegate,NSFetchedResultsCon
         return fetchedResultsController
         
         }()
+    
+    
+    func loadNewPhotos(pin:Pin) {
+         
+        FlickrClient.sharedInstance().loadPhotosByPlaceFlickr(pin, sharedContext: sharedContext) { (result, error) -> Void in
+            
+            
+            if let error = error {
+                self.displayError(error.localizedDescription,titleError: "Failed to load flickr photos")
+            }            
+        }
+        
+    }
+
+    
     
     func controller(controller: NSFetchedResultsController, didChangeObject anObject: AnyObject, atIndexPath indexPath: NSIndexPath?, forChangeType type: NSFetchedResultsChangeType, newIndexPath: NSIndexPath?) {
         
@@ -106,9 +125,13 @@ class MainViewController: UIViewController,MKMapViewDelegate,NSFetchedResultsCon
                 let touchMapCoordinate = mapView.convertPoint(touchPoint, toCoordinateFromView: mapView)
                 let pointAnnotation = MKPointAnnotation()
                 pointAnnotation.coordinate = touchMapCoordinate
-                Pin(longitude: touchMapCoordinate.longitude, latitude: touchMapCoordinate.latitude, context: sharedContext)
+                var pin = Pin(longitude: touchMapCoordinate.longitude, latitude: touchMapCoordinate.latitude, context: sharedContext)
                 mapView.addAnnotation(pointAnnotation)
                 CoreDataStackManager.sharedInstance().saveContext()
+                
+                loadNewPhotos(pin)
+                
+                
                 let span = MKCoordinateSpanMake(0.05, 0.05)
                 let region = MKCoordinateRegionMake(touchMapCoordinate, span)
                 self.mapView.setRegion(region, animated: true)
@@ -167,6 +190,25 @@ class MainViewController: UIViewController,MKMapViewDelegate,NSFetchedResultsCon
         }
     }
     
+    func displayError(errorString: String?,titleError: String?) {
+        dispatch_async(dispatch_get_main_queue(), {
+            if let errorString = errorString {
+                
+                let alertController = UIAlertController(title: titleError, message: "\(errorString)", preferredStyle: .Alert)
+                
+                               
+                let OKAction = UIAlertAction(title: "OK", style: .Default) { (action) in
+                    // ...
+                }
+                alertController.addAction(OKAction)
+                
+                self.presentViewController(alertController, animated: true) {
+                    // ...
+                }
+            }
+        })
+    }
+
 
 }
 
