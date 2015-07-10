@@ -19,7 +19,13 @@ extension FlickrClient {
         static let BaseURLSecure : String = "https://api.flickr.com/services/rest/"
         static let DataFormat : String = "json"
         static let NoJsonCallBack : String = "1"
-        //api_key
+        
+        static let BOUNDING_BOX_HALF_WIDTH = 1.0
+        static let BOUNDING_BOX_HALF_HEIGHT = 1.0
+        static let LAT_MIN = -90.0
+        static let LAT_MAX = 90.0
+        static let LON_MIN = -180.0
+        static let LON_MAX = 180.0
         
         
     }
@@ -31,6 +37,9 @@ extension FlickrClient {
         static let DataFormat = "format"
         static let NoJsonCallBack = "nojsoncallback"
         static let Method = "method"
+        static let Bbox = "bbox"
+        static let PerPage = "per_page"
+        static let Page = "page"
     }
     
     // MARK: - Methods

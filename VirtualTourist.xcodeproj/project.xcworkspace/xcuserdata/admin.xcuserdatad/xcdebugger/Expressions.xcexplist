@@ -3,7 +3,31 @@
    version = "1.0">
    <ContextStates>
       <ContextState
-         contextName = "VirtualTourist.PhotoAlbumViewController.(configureCell (VirtualTourist.PhotoAlbumViewController) -&gt; (VirtualTourist.CollectionViewPhotoCell, photo : VirtualTourist.Photo) -&gt; ()).(closure #1):PhotoAlbumViewController.swift">
+         contextName = "VirtualTourist.PhotoAlbumViewController.collectionView (VirtualTourist.PhotoAlbumViewController)(ObjectiveC.UICollectionView, cellForItemAtIndexPath : ObjectiveC.NSIndexPath) -&gt; ObjectiveC.UICollectionViewCell:PhotoAlbumViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "fetchedResultsController.fetchedObjects?.count">
+            </PersistentString>
+            <PersistentString
+               value = "loadedImages == fetchedResultsController.fetchedObjects?.count ">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "VirtualTourist.PhotoAlbumViewController.loadPhotosByPlaceFlickr (VirtualTourist.PhotoAlbumViewController)() -&gt; ():PhotoAlbumViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "currentResaultPage">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "VirtualTourist.FlickrClient.(loadPhotosByPlaceFlickr (VirtualTourist.FlickrClient) -&gt; (VirtualTourist.Pin, sharedContext : ObjectiveC.NSManagedObjectContext, completionHandler : (result : Swift.Bool, error : Swift.Optional&lt;ObjectiveC.NSError&gt;) -&gt; ()) -&gt; ()).(closure #1).(closure #2):FlickrDataSearch.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "pin.loadedPage ">
+            </PersistentString>
+         </PersistentStrings>
       </ContextState>
       <ContextState
          contextName = "VirtualTourist.PhotoAlbumViewController.collectionView (VirtualTourist.PhotoAlbumViewController)(ObjectiveC.UICollectionView, numberOfItemsInSection : Swift.Int) -&gt; Swift.Int:PhotoAlbumViewController.swift">
@@ -17,21 +41,13 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "VirtualTourist.CoreDataStackManager.(persistentStoreCoordinator.getter : Swift.Optional&lt;ObjectiveC.NSPersistentStoreCoordinator&gt;).(closure #1):CoreDataStackManager.swift">
+      </ContextState>
+      <ContextState
          contextName = "VirtualTourist.Photo.image.setter : Swift.Optional&lt;ObjectiveC.UIImage&gt;:Photo.swift">
          <PersistentStrings>
             <PersistentString
                value = "self.image">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "VirtualTourist.CoreDataStackManager.(persistentStoreCoordinator.getter : Swift.Optional&lt;ObjectiveC.NSPersistentStoreCoordinator&gt;).(closure #1):CoreDataStackManager.swift">
-      </ContextState>
-      <ContextState
-         contextName = "VirtualTourist.PhotoAlbumViewController.loadPhotosByPlaceFlickr (VirtualTourist.PhotoAlbumViewController)() -&gt; ():PhotoAlbumViewController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "currentResaultPage">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -42,6 +58,12 @@
                value = "dictionary[FlickrClient.JSONKeys.Id] as! String ">
             </PersistentString>
          </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "VirtualTourist.PhotoAlbumViewController.(configureCell (VirtualTourist.PhotoAlbumViewController) -&gt; (VirtualTourist.CollectionViewPhotoCell, photo : VirtualTourist.Photo) -&gt; ()).(closure #1).(closure #1):PhotoAlbumViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "VirtualTourist.PhotoAlbumViewController.(configureCell (VirtualTourist.PhotoAlbumViewController) -&gt; (VirtualTourist.CollectionViewPhotoCell, photo : VirtualTourist.Photo) -&gt; ()).(closure #1):PhotoAlbumViewController.swift">
       </ContextState>
    </ContextStates>
 </VariablesViewState>

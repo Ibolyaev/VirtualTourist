@@ -180,15 +180,6 @@ class MainViewController: UIViewController,MKMapViewDelegate,NSFetchedResultsCon
         
     }
     
-    // would not call ???
-    func mapView(mapView: MKMapView!, annotationView view: MKAnnotationView!, didChangeDragState newState: MKAnnotationViewDragState, fromOldState oldState: MKAnnotationViewDragState) {
-        if (newState == MKAnnotationViewDragState.Ending)
-        {
-            var droppedAt = view.annotation.coordinate
-            println(droppedAt)
-            //NSLog(@"dropped at %f,%f", droppedAt.latitude, droppedAt.longitude);
-        }
-    }
     
     func displayError(errorString: String?,titleError: String?) {
         dispatch_async(dispatch_get_main_queue(), {

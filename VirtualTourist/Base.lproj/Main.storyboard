@@ -23,9 +23,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="cyN-ev-fja">
-                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="PLB-Yo-MCi"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="cyN-ev-fja"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                     <connections>
                         <outlet property="mapView" destination="rrx-oN-XJR" id="Xs8-PH-7VJ"/>
@@ -139,6 +137,9 @@
                             </mapView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C1g-S8-tJZ">
                                 <rect key="frame" x="22" y="698" width="376" height="30"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <bool key="isElement" value="NO"/>
+                                </accessibility>
                                 <state key="normal" title="New collection">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>

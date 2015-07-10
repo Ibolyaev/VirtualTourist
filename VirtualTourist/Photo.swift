@@ -44,10 +44,7 @@ class Photo: NSManagedObject {
                 
         self.imagePath = "https://farm\(self.farm).staticflickr.com/\(self.server)/\(self.id)_\(self.secret).jpg"
         
-        
-        
     }
-    
     
     
     var image: UIImage? {
